@@ -1,0 +1,717 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500&display=swap');
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Material Symbols */
+.material-symbols-rounded {
+  vertical-align: middle;
+  font-size: 22px;
+}
+
+/* Encabezado superior */
+header {
+  background-color: #0077b6;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.6rem;
+  color: white; 
+}
+
+/* Menu de navegacion */
+.menu ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.active {
+  color: #00f7ff;
+}
+
+/* Responsive encabezado */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .brand {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+/* Titulos decorativos */
+h1, h3 {
+  font-family: 'Pacifico', cursive;
+}
+
+/* Sección principal */
+#destinos {
+  padding: 2rem 1rem;
+  width: 100%;
+}
+
+/* Grid de tarjetas */
+.destinos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.destinos-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s;
+  min-height: 480px;
+}
+
+.destinos-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.destinos-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.destinos-card h3 {
+  color: #0077b6;
+  margin-bottom: 0.5rem;
+}
+
+.destinos-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Encabezado visual */
+.encabezado-tours {
+  background: url('https://tvazteca.brightspotcdn.com/30/dc/c27443f84f3ca3824c1f526aebbb/cuales-son-las-5-playas-mas-cercanas-a-aguascalientes-para-visitar-y-pasar-semana-santa-2025-lista-completa.jpg') center/cover no-repeat;
+  height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.encabezado-tours .overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.3));
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo-contenido h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
+  letter-spacing: 1px;
+}
+
+.titulo-contenido p {
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Responsive grilla */
+@media (max-width: 900px) {
+  .destinos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .encabezado-tours {
+    height: 220px;
+  }
+
+  .titulo-contenido h1 {
+    font-size: 1.8rem;
+  }
+
+  .titulo-contenido p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .destinos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .destinos-card img {
+    height: 180px;
+  }
+
+  .destinos-card {
+    min-height: auto;
+  }
+}
+
+
+/* Breadcrumbs */
+.breadcrumb {
+  background: #f4f9f9;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.breadcrumb ol {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: "›";
+  margin: 0 0.5rem;
+  color: #666;
+}
+
+.breadcrumb a {
+  color: #0077b6;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+  color: #023e8a;
+  text-decoration: underline;
+}
+
+.breadcrumb li[aria-current="page"] {
+  color: #666;
+  font-weight: bold;
+}
+
+/* Sistema de Filtros */
+.filtros-seccion {
+  background: white;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.filtros-contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.busqueda-filtros {
+  margin-bottom: 1.5rem;
+}
+
+.busqueda-filtros input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.busqueda-filtros input:focus {
+  outline: none;
+  border-color: #0077b6;
+}
+
+.filtros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filtros-grid select {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.filtros-grid select:focus {
+  outline: none;
+  border-color: #0077b6;
+}
+
+.filtros-acciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn-limpiar {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn-limpiar:hover {
+  background: #ee5a5a;
+  transform: scale(1.05);
+}
+
+.contador-resultados {
+  color: #666;
+  font-weight: bold;
+}
+
+/* Mejoras en Tarjetas */
+.destinos-card {
+  position: relative;
+  min-height: 650px;
+}
+
+.card-badges {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.badge-popular,
+.badge-oferta,
+.badge-nuevo {
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.badge-popular {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+}
+
+.badge-oferta {
+  background: linear-gradient(135deg, #25d366, #20ba5a);
+}
+
+.badge-nuevo {
+  background: linear-gradient(135deg, #0077b6, #023e8a);
+}
+
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.stars {
+  color: #ffc107;
+  font-size: 0.9rem;
+}
+
+.reviews {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.card-info-detallada {
+  background: #f8f9fa;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  font-size: 0.85rem;
+}
+
+.card-info-detallada p {
+  margin-bottom: 0.4rem;
+  color: #555;
+}
+
+.card-info-detallada i {
+  color: #0077b6;
+  width: 20px;
+}
+
+.card-precio {
+  margin: 0.5rem 0;
+}
+
+.precio-numero {
+  color: #023e8a;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* Botones en tarjetas */
+.botones-destino {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-info-destino,
+.btn-reserva-rapida {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+  min-width: 120px;
+}
+
+.btn-info-destino {
+  background-color: #0077b6;
+  color: white;
+}
+
+.btn-info-destino:hover {
+  background-color: #023e8a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-reserva-rapida {
+  background-color: #25d366;
+  color: white;
+}
+
+.btn-reserva-rapida:hover {
+  background-color: #20ba5a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-body img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Footer */
+.footer-info {
+  background: #0077b6;
+  color: white;
+  padding: 3rem 2rem;
+  margin-top: 3rem;
+}
+
+.info-contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.footer-info h3 {
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 0.8rem;
+}
+
+.footer-info p {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.mail-link {
+  color: #ffdd00;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.mail-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.Horario p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.Horario .material-symbols-rounded {
+  font-size: 20px;
+}
+
+.pagos {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pagos img {
+  width: 55px;
+  height: 35px;
+  border-radius: 5px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.pagos img:hover {
+  transform: scale(1.1);
+}
+
+.btn-suscripcion {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.btn-suscripcion:hover {
+  background-color: #ee5a5a;
+  transform: scale(1.05);
+}
+
+.footer-social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 1.5rem;
+}
+
+.footer-social-icons img {
+  width: 35px;
+  height: 35px;
+  transition: transform 0.3s;
+}
+
+.footer-social-icons img:hover {
+  transform: scale(1.1);
+  filter: brightness(0) invert(0.7);
+}
+
+footer {
+  background: #023e8a;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* WhatsApp y Scroll to Top */
+.btn-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: 0.3s;
+  z-index: 998;
+}
+
+.btn-whatsapp:hover {
+  transform: scale(1.1);
+}
+
+.btn-scroll-top {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+
+.btn-scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.btn-scroll-top:hover {
+  background-color: #023e8a;
+  transform: scale(1.1);
+}
+
+.btn-scroll-top .material-symbols-rounded {
+  font-size: 24px;
+}
+
+/* Animaciones */
+.destinos-card {
+  animation: fadeInUp 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.destinos-card:nth-child(1) { animation-delay: 0.1s; }
+.destinos-card:nth-child(2) { animation-delay: 0.2s; }
+.destinos-card:nth-child(3) { animation-delay: 0.3s; }
+.destinos-card:nth-child(4) { animation-delay: 0.4s; }
+.destinos-card:nth-child(5) { animation-delay: 0.5s; }
+.destinos-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ocultar tarjetas filtradas */
+.destinos-card.oculto {
+  display: none;
+}
+
+/* Responsive mejorado */
+@media (max-width: 768px) {
+  .filtros-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filtros-acciones {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-limpiar {
+    width: 100%;
+  }
+
+  .destinos-card {
+    min-height: auto;
+  }
+
+  .card-info-detallada {
+    font-size: 0.8rem;
+  }
+
+  .botones-destino {
+    flex-direction: column;
+  }
+
+  .btn-info-destino,
+  .btn-reserva-rapida {
+    width: 100%;
+  }
+
+  .breadcrumb {
+    padding: 0.75rem 1rem;
+  }
+
+  .btn-scroll-top {
+    bottom: 80px;
+    width: 45px;
+    height: 45px;
+  }
+}

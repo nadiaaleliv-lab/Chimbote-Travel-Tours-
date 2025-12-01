@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Destinos Turísticos del Perú | Chimbote Travel Tours - Paquetes y Tours</title>
+  <meta name="description" content="Descubre los mejores destinos turísticos del Perú: Machu Picchu, Cusco, Paracas, Máncora, Arequipa y más. Paquetes turísticos completos con los mejores precios. Reserva ahora.">
+  <meta name="keywords" content="destinos turísticos Perú, Machu Picchu, Cusco, Paracas, Máncora, tours Perú, paquetes turísticos, viajes Perú">
+  <meta name="author" content="Chimbote Travel Tours">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Destinos Turísticos del Perú - Chimbote Travel Tours">
+  <meta property="og:description" content="Explora los mejores destinos del Perú con nuestros paquetes turísticos completos">
+  <meta property="og:image" content="logo-chimbote.jpg">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/jpeg" href="logo-chimbote.jpg">
+  <link rel="apple-touch-icon" href="logo-chimbote.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="destinos.css">
+  <link rel="stylesheet" href="modal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="logo-chimbote.jpg" alt="Logo Agencia" class="logo" />
+      <h1>Chimbote Travel Tours</h1>
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="chimbotes.html">Inicio</a></li>
+        <li><a href="destinos.html" class="active">Destinos</a></li>
+        <li><a href="reserva1.html">Reserva</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="encabezado-tours">
+    <div class="overlay">
+      <div class="titulo-contenido">
+        <h1><i class="fa-solid fa-earth-americas"></i> Destinos Turísticos</h1>
+        <p><i class="fa-solid fa-location-dot"></i> Elige entre nuestras opciones más populares para explorar las maravillas del Perú:</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filtros y Ordenamiento -->
+  <section class="filtros-seccion">
+    <div class="filtros-contenedor">
+      <div class="busqueda-filtros">
+        <input type="text" id="buscar-destino" placeholder="🔍 Buscar destino..." onkeyup="filtrarDestinos()">
+      </div>
+      
+      <div class="filtros-grid">
+        <select id="filtro-precio" onchange="filtrarDestinos()">
+          <option value="">💰 Todos los precios</option>
+          <option value="0-500">Menos de S/ 500</option>
+          <option value="500-700">S/ 500 - S/ 700</option>
+          <option value="700-900">S/ 700 - S/ 900</option>
+          <option value="900+">Más de S/ 900</option>
+        </select>
+        
+        <select id="filtro-duracion" onchange="filtrarDestinos()">
+          <option value="">📅 Todas las duraciones</option>
+          <option value="2">2 días</option>
+          <option value="3">3 días</option>
+          <option value="4">4+ días</option>
+        </select>
+        
+        <select id="filtro-region" onchange="filtrarDestinos()">
+          <option value="">🗺️ Todas las regiones</option>
+          <option value="Cusco">Cusco</option>
+          <option value="Arequipa">Arequipa</option>
+          <option value="Ica">Ica</option>
+          <option value="Piura">Piura</option>
+          <option value="San Martín">San Martín</option>
+          <option value="Loreto">Loreto</option>
+          <option value="Ayacucho">Ayacucho</option>
+          <option value="Cajamarca">Cajamarca</option>
+        </select>
+        
+        <select id="ordenar-por" onchange="ordenarDestinos()">
+          <option value="default">Ordenar por...</option>
+          <option value="precio-asc">Precio: Menor a Mayor</option>
+          <option value="precio-desc">Precio: Mayor a Menor</option>
+          <option value="duracion-asc">Duración: Menor a Mayor</option>
+          <option value="duracion-desc">Duración: Mayor a Menor</option>
+          <option value="popularidad">Más Popular</option>
+        </select>
+      </div>
+      
+      <div class="filtros-acciones">
+        <button onclick="limpiarFiltros()" class="btn-limpiar">Limpiar Filtros</button>
+        <span id="contador-resultados" class="contador-resultados">12 destinos encontrados</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="destinos">
+      <div class="destinos-grid" id="destinos-grid">
+
+        <!-- Machu Picchu -->
+        <div class="destinos-card" data-precio="980" data-duracion="3" data-region="Cusco" data-popularidad="5" data-nombre="Machu Picchu">
+          <div class="card-badges">
+            <span class="badge-popular">⭐ Más Popular</span>
+          </div>
+          <img src="https://elcomercio.pe/resizer/v2/VEMCMJBBSNCDVH7ND4WTUSYSRA.jpg?auth=bde1f61a86c24f63f2f88670c85599afc279947ecf1cc2075a48ddf338ad4c29&width=1800&height=1199&quality=75&smart=true" alt="Machu Picchu" loading="lazy">
+          <div class="card-rating">
+            <span class="stars">★★★★★</span>
+            <span class="reviews">(48 reseñas)</span>
+          </div>
+          <h3><i class="fa-solid fa-mountain-sun"></i> Machu Picchu – Cusco</h3>
+          <div class="card-info-detallada">
+            <p><i class="fa-solid fa-map-marker-alt"></i> <strong>Ubicación:</strong> Cusco, Perú</p>
+            <p><i class="fa-solid fa-thermometer-half"></i> <strong>Clima:</strong> Templado (10-20°C)</p>
+            <p><i class="fa-solid fa-users"></i> <strong>Viajeros este mes:</strong> 180+</p>
+            <p><i class="fa-solid fa-calendar-check"></i> <strong>Mejor época:</strong> Mayo - Octubre</p>
+          </div>
+          <p><i class="fa-solid fa-suitcase-rolling"></i> <strong>Incluye:</strong> Traslados, hospedaje, tren turístico, entrada, guía, alimentación.</p>
+          <p><i class="fa-regular fa-calendar-days"></i> <strong>Duración:</strong> 3 días / 2 noches</p>
+          <div class="card-precio">
+            <p><i class="fa-solid fa-money-bill-wave"></i> <strong>Precio:</strong> <span class="precio-numero">S/980</span> por persona</p>
+          </div>
+          <div class="botones-destino">
+            <button class="btn-info-destino" onclick="mostrarInfoDestino('Machu Picchu – Cusco')">Ver Detalles</button>
+          </div>
+        </div>
+
+        <!-- Montaña de 7 Colores -->
+        <div class="destinos-card" data-precio="620" data-duracion="2" data-region="Cusco" data-popularidad="4" data-nombre="Montaña de 7 Colores">
+          <div class="card-badges">
+            <span class="badge-oferta">-5%</span>
+          </div>
+          <img src="https://bananomeridiano.com/wp-content/uploads/2019/11/monta%C3%B1a-de-los-7-colores.jpg" alt="Montaña de 7 Colores" loading="lazy">
+          <div class="card-rating">
+            <span class="stars">★★★★☆</span>
+            <span class="reviews">(32 reseñas)</span>
+          </div>
+          <h3><i class="fa-solid fa-mountain"></i> Montaña de 7 Colores – Cusco</h3>
+          <div class="card-info-detallada">
+            <p><i class="fa-solid fa-map-marker-alt"></i> <strong>Ubicación:</strong> Cusco, Perú</p>
+            <p><i class="fa-solid fa-thermometer-half"></i> <strong>Clima:</strong> Frío (5-15°C)</p>
+            <p><i class="fa-solid fa-users"></i> <strong>Viajeros este mes:</strong> 120+</p>
+            <p><i class="fa-solid fa-calendar-check"></i> <strong>Mejor época:</strong> Abril - Noviembre</p>
+          </div>
+          <p><i class="fa-solid fa-suitcase-rolling"></i> <strong>Incluye:</strong> Traslados, desayuno, almuerzo, guía, oxígeno.</p>
+          <p><i class="fa-regular fa-calendar-days"></i> <strong>Duración:</strong> 2 días / 1 noche</p>
+          <div class="card-precio">
+            <p><i class="fa-solid fa-money-bill-wave"></i> <strong>Precio:</strong> <span class="precio-numero">S/620</span> por persona</p>
+          </div>
+          <div class="botones-destino">
+            <button class="btn-info-destino" onclick="mostrarInfoDestino('Montaña de 7 Colores – Cusco')">Ver Detalles</button>
+          </div>
+        </div>
+
+        <!-- Valle Sagrado -->
+        <div class="destinos-card" data-precio="720" data-duracion="2" data-region="Cusco" data-popularidad="4" data-nombre="Valle Sagrado">
+          <img src="https://www.machupicchuterra.com/wp-content/uploads/valle-sagrado-10.jpg" alt="Valle Sagrado" loading="lazy">
+          <div class="card-rating">
+            <span class="stars">★★★★★</span>
+            <span class="reviews">(28 reseñas)</span>
+          </div>
+          <h3><i class="fa-solid fa-tree-city"></i> Valle Sagrado + Pisac – Cusco</h3>
+          <div class="card-info-detallada">
+            <p><i class="fa-solid fa-map-marker-alt"></i> <strong>Ubicación:</strong> Cusco, Perú</p>
+            <p><i class="fa-solid fa-thermometer-half"></i> <strong>Clima:</strong> Templado (12-22°C)</p>
+            <p><i class="fa-solid fa-users"></i> <strong>Viajeros este mes:</strong> 95+</p>
+            <p><i class="fa-solid fa-calendar-check"></i> <strong>Mejor época:</strong> Todo el año</p>
+          </div>
+          <p><i class="fa-solid fa-suitcase-rolling"></i> <strong>Incluye:</strong> Transporte turístico, entradas, guía local, almuerzo buffet, hospedaje.</p>
+          <p><i class="fa-regular fa-calendar-days"></i> <strong>Duración:</strong> 2 días / 1 noche</p>
+          <div class="card-precio">
+            <p><i class="fa-solid fa-money-bill-wave"></i> <strong>Precio:</strong> <span class="precio-numero">S/720</span> por persona</p>
+          </div>
+          <div class="botones-destino">
+            <button class="btn-info-destino" onclick="mostrarInfoDestino('Valle Sagrado + Pisac – Cusco')">Ver Detalles</button>
+          </div>
+        </div>
+
+        <!-- Paracas + Huacachina -->
+        <div class="destinos-card" data-precio="420" data-duracion="2" data-region="Ica" data-popularidad="5" data-nombre="Paracas">
+          <div class="card-badges">
+            <span class="badge-popular">⭐ Más Popular</span>
+            <span class="badge-oferta">-10%</span>
+          </div>
+          <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/11/84/54/68.jpg" alt="Paracas y Huacachina" loading="lazy">
+          <div class="card-rating">
+            <span class="stars">★★★★★</span>
+            <span class="reviews">(56 reseñas)</span>
+          </div>
+          <h3><i class="fa-solid fa-water"></i> Paracas + Huacachina – Ica</h3>
+          <div class="card-info-detallada">
+            <p><i class="fa-solid fa-map-marker-alt"></i> <strong>Ubicación:</strong> Ica, Perú</p>
+            <p><i class="fa-solid fa-thermometer-half"></i> <strong>Clima:</strong> Cálido (18-28°C)</p>
+            <p><i class="fa-solid fa-users"></i> <strong>Viajeros este mes:</strong> 200+</p>
+            <p><i class="fa-solid fa-calendar-check"></i> <strong>Mejor época:</strong> Diciembre - Marzo</p>
+          </div>
+          <p><i class="fa-solid fa-suitcase-rolling"></i> <strong>Incluye:</strong> Paseo en bote, tour en buggy, sandboard, guía, hospedaje.</p>
+          <p><i class="fa-regular fa-calendar-days"></i> <strong>Duración:</strong> 2 días / 1 noche</p>
+          <div class="card-precio">
+            <p><i class="fa-solid fa-money-bill-wave"></i> <strong>Precio:</strong> <span class="precio-numero">S/420</span> por persona</p>
+          </div>
+          <div class="botones-destino">
+            <button class="btn-info-destino" onclick="mostrarInfoDestino('Paracas + Huacachina – Ica')">Ver Detalles</button>
+          </div>
+        </div>
+
+        <!-- Máncora -->
+        <div class="destinos-card" data-precio="480" data-duracion="3" data-region="Piura" data-popularidad="4" data-nombre="Máncora">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Mancorabeach1.jpg" alt="Máncora" loading="lazy">
+          <div class="card-rating">
+            <span class="stars">★★★★☆</span>
+            <span class="reviews">(41 reseñas)</span>
+          </div>
+          <h3><i class="fa-solid fa-fish"></i> Máncora + Nado con Tortugas – Piura</h3>
+          <div class="card-info-detallada">
+            <p><i class="fa-solid fa-map-marker-alt"></i> <strong>Ubicación:</strong> Piura, Perú</p>
+            <p><i class="fa-solid fa-thermometer-half"></i> <strong>Clima:</strong> Tropical (22-30°C)</p>
+            <p><i class="fa-solid fa-users"></i> <strong>Viajeros este mes:</strong> 150+</p>
+            <p><i class="fa-solid fa-calendar-check"></i> <strong>Mejor época:</strong> Diciembre - Abril</p>
+          </div>
+          <p><i class="fa-solid fa-suitcase-rolling"></i> <strong>Incluye:</strong> Hospedaje frente al mar, tour marino, desayuno.</p>
+          <p><i class="fa-regular fa-calendar-days"></i> <strong>Duración:</strong> 3 días / 2 noches</p>
+          <div class="card-precio">
+            <p><i class="fa-solid fa-money-bill-wave"></i> <strong>Precio:</strong> <span class="precio-numero">S/480</span> por persona</p>
+          </div>
+          <div class="botones-destino">
+            <button class="btn-info-destino" onclick="mostrarInfoDestino('Máncora + Nado con Tortugas – Piura')">Ver Detalles</button>
+          </div>
+        </div>
+
+        <!-- Cañón del Colca -->
+        <div class="destinos-card" data-precio="790" data-duracion="3" data-region="Arequipa" data-popularidad="4" data-nombre="Cañón del Colca">
+          <img src="https://machupicchuwayna.com/wp-content/uploads/2024/10/canon-del-colca-arequipa.webp" alt="Cañón del Colca" loading="lazy">
+          <div class="card-rating">
+            <span class="stars">★★★★★</span>
+            <span class="reviews">(35 reseñas)</span>
+          </div>
+          <h3><i class="fa-solid fa-crow"></i> Cañón del Colca – Arequipa</h3>
+          <div class="card-info-detallada">
+            <p><i class="fa-solid fa-map-marker-alt"></i> <strong>Ubicación:</strong> Arequipa, Perú</p>
+            <p><i class="fa-solid fa-thermometer-half"></i> <strong>Clima:</strong> Seco y soleado (8-22°C)</p>
+            <p><i class="fa-solid fa-users"></i> <strong>Viajeros este mes:</strong> 110+</p>
+            <p><i class="fa-solid fa-calendar-check"></i> <strong>Mejor época:</strong> Mayo - Septiembre</p>
+          </div>
+          <p><i class="fa-solid fa-suitcase-rolling"></i> <strong>Incluye:</strong> Transporte interno, hospedaje, guía, entradas, desayuno.</p>
+          <p><i class="fa-regular fa-calendar-days"></i> <strong>Duración:</strong> 3 días / 2 noches</p>
+          <div class="card-precio">
+            <p><i class="fa-solid fa-money-bill-wave"></i> <strong>Precio:</strong> <span class="precio-numero">S/790</span> por persona</p>
+          </div>
+          <div class="botones-destino">
+            <button class="btn-info-destino" onclick="mostrarInfoDestino('Cañón del Colca – Arequipa')">Ver Detalles</button>
+          </div>
+        </div>
+
+        <!-- Arequipa Colonial -->
+        <div class="destinos-card" data-precio="720" data-duracion="3" data-region="Arequipa" data-popularidad="3" data-nombre="Arequipa">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxP8_ccP-kW-jJP75pZuRE5AVG6EEu2Ix2fxkg7JggLjzF9ccmD4fI9redjApZbxE_dtdIb-qzCz-ZMdTd1slWj9frP95nqcOHfo7b_PzodTLgmYXGjFtVnnOrys09Cs7F7L92L7haV0Dk/s400/IMG_0055+copy2.jpg" alt="Arequipa Colonial" loading="lazy">
+          <div class="card-rating">
+            <span class="stars">★★★★☆</span>
+            <span class="reviews">(22 reseñas)</span>
+          </div>
+          <h3><i class="fa-solid fa-landmark-dome"></i> Arequipa Colonial + Santa Catalina</h3>
+          <div class="card-info-detallada">
+            <p><i class="fa-solid fa-map-marker-alt"></i> <strong>Ubicación:</strong> Arequipa, Perú</p>
+            <p><i class="fa-solid fa-thermometer-half"></i> <strong>Clima:</strong> Seco (10-25°C)</p>
+            <p><i class="fa-solid fa-users"></i> <strong>Viajeros este mes:</strong> 85+</p>
+            <p><i class="fa-solid fa-calendar-check"></i> <strong>Mejor época:</strong> Todo el año</p>
+          </div>
+          <p><i class="fa-solid fa-suitcase-rolling"></i> <strong>Incluye:</strong> City tour, entradas, guía, hospedaje céntrico, almuerzo.</p>
+          <p><i class="fa-regular fa-calendar-days"></i> <strong>Duración:</strong> 3 días / 2 noches</p>
+          <div class="card-precio">
+            <p><i class="fa-solid fa-money-bill-wave"></i> <strong>Precio:</strong> <span class="precio-numero">S/720</span> por persona</p>
+          </div>
+          <div class="botones-destino">
+            <button class="btn-info-destino" onclick="mostrarInfoDestino('Arequipa Colonial + Santa Catalina')">Ver Detalles</button>
+          </div>
+        </div>
+
+        <!-- Laguna Humantay -->
+        <div class="destinos-card" data-precio="650" data-duracion="2" data-region="Cusco" data-popularidad="4" data-nombre="Laguna Humantay">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/e6/4f/72/caption.jpg?w=1200&h=-1&s=1" alt="Laguna Humantay" loading="lazy">
+          <div class="card-rating">
+            <span class="stars">★★★★★</span>
+            <span class="reviews">(38 reseñas)</span>
+          </div>
+          <h3><i class="fa-solid fa-water-ladder"></i> Laguna Humantay – Cusco</h3>
+          <div class="card-info-detallada">
+            <p><i class="fa-solid fa-map-marker-alt"></i> <strong>Ubicación:</strong> Cusco, Perú</p>
+            <p><i class="fa-solid fa-thermometer-half"></i> <strong>Clima:</strong> Frío (5-18°C)</p>
+            <p><i class="fa-solid fa-users"></i> <strong>Viajeros este mes:</strong> 130+</p>
+            <p><i class="fa-solid fa-calendar-check"></i> <strong>Mejor época:</strong> Mayo - Octubre</p>
+          </div>
+          <p><i class="fa-solid fa-suitcase-rolling"></i> <strong>Incluye:</strong> Transporte, desayuno, almuerzo, guía, oxígeno.</p>
+          <p><i class="fa-regular fa-calendar-days"></i> <strong>Duración:</strong> 2 días / 1 noche</p>
+          <div class="card-precio">
+            <p><i class="fa-solid fa-money-bill-wave"></i> <strong>Precio:</strong> <span class="precio-numero">S/650</span> por persona</p>
+          </div>
+          <div class="botones-destino">
+            <button class="btn-info-destino" onclick="mostrarInfoDestino('Laguna Humantay – Cusco')">Ver Detalles</button>
+          </div>
+        </div>
+
+        <!-- Tarapoto -->
+        <div class="destinos-card" data-precio="890" data-duracion="4" data-region="San Martín" data-popularidad="3" data-nombre="Tarapoto">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/fa/be/58/excelente-lugar-para.jpg?w=800&h=400&s=1" alt="Tarapoto" loading="lazy">
+          <div class="card-rating">
+            <span class="stars">★★★★☆</span>
+            <span class="reviews">(19 reseñas)</span>
+          </div>
+          <h3><i class="fa-solid fa-water"></i> Tarapoto + Cataratas de Ahuashiyacu</h3>
+          <div class="card-info-detallada">
+            <p><i class="fa-solid fa-map-marker-alt"></i> <strong>Ubicación:</strong> San Martín, Perú</p>
+            <p><i class="fa-solid fa-thermometer-half"></i> <strong>Clima:</strong> Tropical (20-32°C)</p>
+            <p><i class="fa-solid fa-users"></i> <strong>Viajeros este mes:</strong> 65+</p>
+            <p><i class="fa-solid fa-calendar-check"></i> <strong>Mejor época:</strong> Mayo - Octubre</p>
+          </div>
+          <p><i class="fa-solid fa-suitcase-rolling"></i> <strong>Incluye:</strong> Traslados, hospedaje, tours guiados, alimentación.</p>
+          <p><i class="fa-regular fa-calendar-days"></i> <strong>Duración:</strong> 4 días / 3 noches</p>
+          <div class="card-precio">
+            <p><i class="fa-solid fa-money-bill-wave"></i> <strong>Precio:</strong> <span class="precio-numero">S/890</span> por persona</p>
+          </div>
+          <div class="botones-destino">
+            <button class="btn-info-destino" onclick="mostrarInfoDestino('Tarapoto + Cataratas de Ahuashiyacu')">Ver Detalles</button>
+          </div>
+        </div>
+
+        <!-- Iquitos -->
+        <div class="destinos-card" data-precio="1100" data-duracion="4" data-region="Loreto" data-popularidad="4" data-nombre="Iquitos">
+          <div class="card-badges">
+            <span class="badge-nuevo">Nuevo</span>
+          </div>
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/13/db/18/caption.jpg?w=500&h=400&s=1" alt="Iquitos" loading="lazy">
+          <div class="card-rating">
+            <span class="stars">★★★★★</span>
+            <span class="reviews">(27 reseñas)</span>
+          </div>
+          <h3><i class="fa-solid fa-hippo"></i> Iquitos + Selva Amazónica</h3>
+          <div class="card-info-detallada">
+            <p><i class="fa-solid fa-map-marker-alt"></i> <strong>Ubicación:</strong> Loreto, Perú</p>
+            <p><i class="fa-solid fa-thermometer-half"></i> <strong>Clima:</strong> Tropical húmedo (24-32°C)</p>
+            <p><i class="fa-solid fa-users"></i> <strong>Viajeros este mes:</strong> 45+</p>
+            <p><i class="fa-solid fa-calendar-check"></i> <strong>Mejor época:</strong> Mayo - Octubre</p>
+          </div>
+          <p><i class="fa-solid fa-suitcase-rolling"></i> <strong>Incluye:</strong> Traslados fluviales, hospedaje en lodge, alimentación completa, tours.</p>
+          <p><i class="fa-regular fa-calendar-days"></i> <strong>Duración:</strong> 4 días / 3 noches</p>
+          <div class="card-precio">
+            <p><i class="fa-solid fa-money-bill-wave"></i> <strong>Precio:</strong> <span class="precio-numero">S/1.100</span> por persona</p>
+          </div>
+          <div class="botones-destino">
+            <button class="btn-info-destino" onclick="mostrarInfoDestino('Iquitos + Selva Amazónica')">Ver Detalles</button>
+          </div>
+        </div>
+
+        <!-- Ayacucho -->
+        <div class="destinos-card" data-precio="580" data-duracion="4" data-region="Ayacucho" data-popularidad="3" data-nombre="Ayacucho">
+          <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/07/99/e1/ee.jpg" alt="Millpu" loading="lazy">
+          <div class="card-rating">
+            <span class="stars">★★★★☆</span>
+            <span class="reviews">(15 reseñas)</span>
+          </div>
+          <h3><i class="fa-solid fa-water"></i> Ayacucho + Aguas Turquesas de Millpu</h3>
+          <div class="card-info-detallada">
+            <p><i class="fa-solid fa-map-marker-alt"></i> <strong>Ubicación:</strong> Ayacucho, Perú</p>
+            <p><i class="fa-solid fa-thermometer-half"></i> <strong>Clima:</strong> Templado (12-22°C)</p>
+            <p><i class="fa-solid fa-users"></i> <strong>Viajeros este mes:</strong> 55+</p>
+            <p><i class="fa-solid fa-calendar-check"></i> <strong>Mejor época:</strong> Abril - Noviembre</p>
+          </div>
+          <p><i class="fa-solid fa-suitcase-rolling"></i> <strong>Incluye:</strong> Hospedaje, guía, alimentación, entradas.</p>
+          <p><i class="fa-regular fa-calendar-days"></i> <strong>Duración:</strong> 4 días / 3 noches</p>
+          <div class="card-precio">
+            <p><i class="fa-solid fa-money-bill-wave"></i> <strong>Precio:</strong> <span class="precio-numero">S/580</span> por persona</p>
+          </div>
+          <div class="botones-destino">
+            <button class="btn-info-destino" onclick="mostrarInfoDestino('Ayacucho + Aguas Turquesas de Millpu')">Ver Detalles</button>
+          </div>
+        </div>
+
+        <!-- Cajamarca -->
+        <div class="destinos-card" data-precio="620" data-duracion="4" data-region="Cajamarca" data-popularidad="3" data-nombre="Cajamarca">
+          <img src="https://www.dosmanosperu.com/fotos/tourfotos/tours/hot-springs-banos-inca.jpg" alt="Cajamarca" loading="lazy">
+          <div class="card-rating">
+            <span class="stars">★★★★☆</span>
+            <span class="reviews">(18 reseñas)</span>
+          </div>
+          <h3><i class="fa-solid fa-hot-tub-person"></i> Cajamarca Histórica + Baños del Inca</h3>
+          <div class="card-info-detallada">
+            <p><i class="fa-solid fa-map-marker-alt"></i> <strong>Ubicación:</strong> Cajamarca, Perú</p>
+            <p><i class="fa-solid fa-thermometer-half"></i> <strong>Clima:</strong> Templado (10-20°C)</p>
+            <p><i class="fa-solid fa-users"></i> <strong>Viajeros este mes:</strong> 70+</p>
+            <p><i class="fa-solid fa-calendar-check"></i> <strong>Mejor época:</strong> Mayo - Octubre</p>
+          </div>
+          <p><i class="fa-solid fa-suitcase-rolling"></i> <strong>Incluye:</strong> Hospedaje, city tour, entradas, alimentación completa.</p>
+          <p><i class="fa-regular fa-calendar-days"></i> <strong>Duración:</strong> 4 días / 3 noches</p>
+          <div class="card-precio">
+            <p><i class="fa-solid fa-money-bill-wave"></i> <strong>Precio:</strong> <span class="precio-numero">S/620</span> por persona</p>
+          </div>
+          <div class="botones-destino">
+            <button class="btn-info-destino" onclick="mostrarInfoDestino('Cajamarca Histórica + Baños del Inca')">Ver Detalles</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Completo -->
+  <section id="contacto" class="footer-info">
+    <div class="info-contenedor">
+      <div>
+        <h3>Sobre Nosotros</h3>
+        <p>Somos una empresa chimbotana comprometida con promover el turismo y la cultura del Perú, brindando experiencias únicas para quienes desean descubrir la diversidad y el encanto de nuestro país.</p>
+      </div>
+
+      <div>
+        <h3>Contáctanos</h3>
+        <p>Email: <a href="mailto:chimbotetraveltours16@hotmail.es" class="mail-link">chimbotetraveltours16@hotmail.es</a><br>Teléfono: +51 942 620 099</p>
+      </div>
+
+      <div class="Horario"> 
+        <h3>Horario</h3> 
+        <p><span class="material-symbols-rounded">schedule</span> Lunes a Viernes: 9:00 am - 6:00 pm</p>
+        <p><span class="material-symbols-rounded">event</span> Sábado: 9:00 am - 1:00 pm</p> 
+        <p><span class="material-symbols-rounded">event_busy</span> Domingo: Cerrado</p>
+      </div>
+
+      <div class="Pago"> 
+        <h3>Métodos de Pago</h3>
+        <div class="pagos"> 
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa"></a> 
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard"></a> 
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Icono_de_la_aplicaci%C3%B3n_Yape.png" alt="Yape"></a> 
+          <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo9ig-yw4ZC6cj896X8Fl3DSd160deJD-dFw&s" alt="Plin"></a> 
+        </div>
+        <button class="btn-suscripcion" onclick="suscribirseNewsletter()" aria-label="Suscribirse al newsletter" style="margin-top: 1rem;">📧 Suscríbete a Ofertas</button>
+      </div> 
+    </div>
+
+    <div class="footer-social-icons">
+      <a href="https://www.facebook.com/ChimboteTravelToursEirl/about?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Facebook"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/960px-Facebook_logo_%28square%29.png" alt="Facebook" width="30"></a>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Instagram"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" width="30"></a>
+      <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en TikTok"><img src="https://img.freepik.com/vector-premium/logotipo-redes-sociales-vector-tiktok_1093524-451.jpg" alt="TikTok" width="30"></a>
+      <a href="https://wa.me/51942620099" target="_blank" rel="noopener noreferrer" aria-label="Contáctanos por WhatsApp"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="30"></a>
+  </section>
+
+  <footer>
+    © 2025 Portal Turístico de Chimbote | Todos los derechos reservados.
+  </footer>
+
+  <a href="https://wa.me/51942620099" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contáctanos por WhatsApp">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="35">
+  </a>
+
+  <!-- Scroll -->
+  <button id="btn-scroll-top" class="btn-scroll-top" aria-label="Volver arriba" title="Volver arriba">
+    <span class="material-symbols-rounded">arrow_upward</span>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+  <script src="destinos-filtros.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reserva de Paquete Turístico</title>
+  <link rel="stylesheet" href="reserva1.css" />
+  <link rel="stylesheet" href="modal.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/jpeg" href="logo-chimbote.jpg">
+  <link rel="apple-touch-icon" href="logo-chimbote.jpg">
+
+</head>
+<body>
+    <header>
+    <div class="brand">
+      <img src="logo-chimbote.jpg" alt="Logo Agencia" class="logo" />
+      <h1>Chimbote Travel Tours</h1>
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="chimbotes.html">Inicio</a></li>
+        <li><a href="destinos.html">Destinos</a></li>
+        <li><a href="reserva1.html" class="active">Reserva</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="reserva">
+  <div class="contenedor">
+    <h2>Formulario de Reserva</h2>
+    <form action="reserva2.html" method="get">
+      <div class="campo">
+        <label for="cliente">Nombre:</label>
+        <input type="text" id="cliente" name="cliente" required />
+      </div>
+      <div class="campo">
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required />
+      </div>
+      <div class="campo">
+        <label for="destinos">Destino:</label>
+                <select id="destinos" name="destinos" required onchange="cargarReservaDesdeStorage()">
+          <option value="">Seleccione</option>
+          <option value="Machu Picchu">Machu Picchu – Cusco</option>
+          <option value="Montaña">Montaña de 7 Colores – Cusco</option>
+          <option value="Valle Sagrado">Valle Sagrado + Pisac – Cusco</option>
+          <option value="Paracas">Paracas + Huacachina – Ica</option>
+          <option value="Máncora">Máncora + Nado con Tortugas – Piura</option>
+          <option value="Cañon">Cañón del Colca – Arequipa</option>
+          <option value="Arequipa">Arequipa Colonial + Santa Catalina</option>
+          <option value="Laguna">Laguna Humantay – Cusco</option>
+          <option value="Tarapoto">Tarapoto + Cataratas de Ahuashiyacu</option>
+          <option value="Iquitos">Iquitos + Selva Amazónica</option>
+          <option value="Ayacucho">Ayacucho + Aguas Turquesas de Millpu</option>
+          <option value="Cajamarca">Cajamarca Histórica + Baños del Inca</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="fecha">Fecha de Viaje:</label>
+        <input type="date" id="fecha" name="fecha" required />
+      </div>
+      <div class="campo">
+        <label for="personas">Cantidad de Personas:</label>
+        <input type="number" id="personas" name="personas" min="1" required />
+      </div>
+      <div id="precio-total"></div>
+      <button type="submit" class="btn-reservar" onclick="validarFormulario(event)">Reservar</button>
+    </form>
+  </div>
+</section>
+
+  <section id="contacto" class="footer-info">
+    <div class="info-contenedor">
+      <div>
+        <h3>Sobre Nosotros</h3>
+        <p>Somos una empresa chimbotana comprometida con promover el turismo y la cultura del Perú, brindando experiencias únicas para quienes desean descubrir la diversidad y el encanto de nuestro país.</p>
+      </div>
+      <div>
+        <h3>Contáctanos</h3>
+        <p>Email: <a href="mailto:chimbotetraveltours16@hotmail.es" class="mail-link">chimbotetraveltours16@hotmail.es</a><br>Teléfono: +51 942 620 099</p>
+      </div>
+
+      <div class="Horario"> 
+        <h3>Horario</h3> 
+        <p><span class="material-symbols-rounded">schedule</span> Lunes a Viernes: 9:00 am - 6:00 pm</p>
+        <p><span class="material-symbols-rounded">event</span> Sábado: 9:00 am - 1:00 pm</p> 
+        <p><span class="material-symbols-rounded">event_busy</span> Domingo: Cerrado</p>
+      </div>
+
+      <div class="Pago"> 
+        <h3>Métodos de Pago</h3>
+        <div class="pagos"> 
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa"></a> 
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard"></a> 
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Icono_de_la_aplicaci%C3%B3n_Yape.png" alt="Yape"></a> 
+          <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo9ig-yw4ZC6cj896X8Fl3DSd160deJD-dFw&s" alt="Plin"></a> 
+        </div>
+        <button class="btn-suscripcion" onclick="suscribirseNewsletter()" style="margin-top: 1rem;">📧 Suscríbete a Ofertas</button>
+      </div>
+    </div>
+
+    <div class="footer-social-icons">
+      <a href="https://www.facebook.com/ChimboteTravelToursEirl/about?locale=es_LA"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/960px-Facebook_logo_%28square%29.png" alt="Facebook" width="30"></a>
+      <a href="https://www.instagram.com"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" width="30"></a>
+      <a href="https://www.tiktok.com"><img src="https://img.freepik.com/vector-premium/logotipo-redes-sociales-vector-tiktok_1093524-451.jpg" alt="TikTok" width="30"></a>
+      <a href="https://wa.me/51942620099"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="30"></a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Portal Turístico de Chimbote | Todos los derechos reservados.
+  </footer>
+
+  <a href="https://wa.me/51942620099" class="btn-whatsapp" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="35">
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>
